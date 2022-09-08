@@ -1,9 +1,9 @@
-require("./open-telemetry");
+require("./src/open-telemetry");
 
 const { ApolloServer } = require("apollo-server");
 
-const { resolvers } = require("./resolvers");
-const { typeDefs } = require("./schema");
+const { resolvers } = require("./src/resolvers");
+const { typeDefs } = require("./src/schema");
 
 const {
   ApolloServerPluginLandingPageLocalDefault,

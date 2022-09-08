@@ -52,7 +52,7 @@ provider.addSpanProcessor(new SimpleSpanProcessor(consoleExporter));
 const collectorOptions = {
   url: "https://otlp.eu01.nr-data.net:4318/v1/traces",
   headers: {
-    "api-key": "",
+    "api-key": "{{Your New Relic License Ingest Key}}",
   },
   concurrencyLimit: 10,
 };
