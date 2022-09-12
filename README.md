@@ -1,58 +1,73 @@
 [![New Relic Experimental header](https://github.com/newrelic/opensource-website/raw/master/src/images/categories/Experimental.png)](https://opensource.newrelic.com/oss-category/#new-relic-experimental)
 
-# [Project Name] 
-![GitHub forks](https://img.shields.io/github/forks/newrelic-experimental/newrelic-experimental-FIT-template?style=social)
-![GitHub stars](https://img.shields.io/github/stars/newrelic-experimental/newrelic-experimental-FIT-template?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/newrelic-experimental/newrelic-experimental-FIT-template?style=social)
+# New Relic Apollo Server OTEL Integration
+![GitHub forks](https://img.shields.io/github/forks/newrelic-experimental/newrelic-apollo-server-integration?style=social)
+![GitHub stars](https://img.shields.io/github/stars/newrelic-experimental/newrelic-apollo-server-integration?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/newrelic-experimental/newrelic-apollo-server-integration?style=social)
 
-![GitHub all releases](https://img.shields.io/github/downloads/newrelic-experimental/newrelic-experimental-FIT-template/total)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/newrelic-experimental/newrelic-experimental-FIT-template)
-![GitHub last commit](https://img.shields.io/github/last-commit/newrelic-experimental/newrelic-experimental-FIT-template)
-![GitHub Release Date](https://img.shields.io/github/release-date/newrelic-experimental/newrelic-experimental-FIT-template)
-
-
-![GitHub issues](https://img.shields.io/github/issues/newrelic-experimental/newrelic-experimental-FIT-template)
-![GitHub issues closed](https://img.shields.io/github/issues-closed/newrelic-experimental/newrelic-experimental-FIT-template)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/newrelic-experimental/newrelic-experimental-FIT-template)
-![GitHub pull requests closed](https://img.shields.io/github/issues-pr-closed/newrelic-experimental/newrelic-experimental-FIT-template)
+![GitHub all releases](https://img.shields.io/github/downloads/newrelic-experimental/newrelic-apollo-server-integration/total)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/newrelic-experimental/newrelic-apollo-server-integration)
+![GitHub last commit](https://img.shields.io/github/last-commit/newrelic-experimental/newrelic-apollo-server-integration)
+![GitHub Release Date](https://img.shields.io/github/release-date/newrelic-experimental/newrelic-apollo-server-integration)
 
 
->[Brief description - what is the project and value does it provide? How often should users expect to get releases? How is versioning set up? Where does this project want to go?]
+![GitHub issues](https://img.shields.io/github/issues/newrelic-experimental/newrelic-apollo-server-integration)
+![GitHub issues closed](https://img.shields.io/github/issues-closed/newrelic-experimental/newrelic-apollo-server-integration)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/newrelic-experimental/newrelic-apollo-server-integration)
+![GitHub pull requests closed](https://img.shields.io/github/issues-pr-closed/newrelic-experimental/newrelic-apollo-server-integration)
+
+
+This repo contains an example of New Relic with Apollo Server integration using Open Telemetry standard.
 
 ## Value 
 
-|Metrics | Events | Logs | Traces | Visualization | Automation |
-|:-:|:-:|:-:|:-:|:-:|:-:|
-|:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:x:|:x:|
+Read the techincal guide in the following blog post:
 
-### List of Metrics,Events,Logs,Traces 
-|Name | Type | Description |
-|:-:|:-:|:-:|
-|*metric.name* | Metric| *description*|
-|*event.name* | Event|  *description*|
-|*log.name* | Log|  *description*|
-|*trace.name*| Trace| *description*
-|---|---|---|
+{{Blog post link - coming soon}}
 
 ## Installation
 
-> [Include a step-by-step procedure on how to get your code installed. Be sure to include any third-party dependencies that need to be installed separately]
+Clone this repo.
+
+Run `npm run install` to install all the dependencies.
+
 
 ## Getting Started
 
->[Simple steps to start working with the software similar to a "Hello World"]
+This Apollo Server sample project contains only one query-able type `Books` which contains `author` and `title` fileds.
+
+```js
+ type Book {
+    title: String
+    author: String
+  }
+```
+
+### Run
+
+Start the server using `npm run dev` command and navigate your broser to `http://localhost:4000` which will open Apollo Sandbox where you can run the queries such as:
+
+```js
+query BooksQuery {
+  books {
+    author
+    title
+  }
+}
+```
+
+```js
+query BookTitlesQuery {
+  books {
+    title
+  }
+}
+```
 
 ## Usage
 
->[**Optional** - Include more thorough instructions on how to use the software. This section might not be needed if the Getting Started section is enough. Remove this section if it's not needed.]
-
-## Building
-
->[**Optional** - Include this section if users will need to follow specific instructions to build the software from source. Be sure to include any third party build dependencies that need to be installed separately. Remove this section if it's not needed.]
-
-## Testing
-
->[**Optional** - Include instructions on how to run tests if we include tests with the codebase. Remove this section if it's not needed.]
+This is a sample repo and is inteded to be used as an integration example
+The most important file of the repository showing a sample New Relic Apollo Server Open Telemetry integration can be found in [src/open-telemetry.js](src/open-telemetry.js) file.
 
 ## Support
 
