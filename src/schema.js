@@ -9,7 +9,11 @@ const typeDefs = gql`
   # This "Book" type defines the queryable fields for every book in our data source.
   type Book {
     title: String
-    author: String
+    author: Author
+  }
+
+  type Author {
+    name: String
   }
 
   # The "Query" type is special: it lists all of the available queries that

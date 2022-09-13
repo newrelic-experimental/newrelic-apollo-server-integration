@@ -5,6 +5,13 @@ const resolvers = {
   Query: {
     books: () => books,
   },
+  Book: {
+    author(parent) {
+      return {
+        name: parent.author,
+      };
+    },
+  },
 };
 
 module.exports = { resolvers };

@@ -34,12 +34,16 @@ Run `npm run install` to install all the dependencies.
 
 ## Getting Started
 
-This Apollo Server sample project contains only one query-able type `Books` which contains `author` and `title` fileds.
+This Apollo Server sample project contains two query-able types `Book` and `Author`
 
 ```js
- type Book {
+  type Book {
     title: String
-    author: String
+    author: Author
+  }
+
+  type Author {
+    name: String
   }
 ```
 
@@ -50,7 +54,9 @@ Start the server using `npm run dev` command and navigate your broser to `http:/
 ```js
 query BooksQuery {
   books {
-    author
+    author {
+      name
+    }
     title
   }
 }
