@@ -4,7 +4,10 @@
   "description": "Apollo New Relic OTEL Integration",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js"
+    "server": "concurrently -k npm:server:*",
+    "server:books": "node ./src/books/index.js",
+    "server:authors": "node ./src/authors/index.js",
+    "server:graphql": "node ./gateway.js"
   },
   "keywords": [
     "apollo",
@@ -14,10 +17,10 @@
   "author": "matewilk",
   "license": "ISC",
   "dependencies": {
+    "@apollo/federation": "^0.36.1",
+    "@apollo/gateway": "^2.1.1",
     "@opentelemetry/api": "1.0",
     "@opentelemetry/core": "1.0",
-    "@opentelemetry/exporter-trace-otlp-grpc": "^0.32.0",
-    "@opentelemetry/exporter-trace-otlp-http": "^0.32.0",
     "@opentelemetry/exporter-trace-otlp-proto": "^0.32.0",
     "@opentelemetry/instrumentation": "^0.27.0",
     "@opentelemetry/instrumentation-express": "^0.28.0",
@@ -27,6 +30,7 @@
     "@opentelemetry/sdk-trace-base": "1.0",
     "@opentelemetry/sdk-trace-node": "1.0",
     "apollo-server": "^3.10.2",
+    "concurrently": "^7.4.0",
     "graphql": "^16.6.0"
   }
 }

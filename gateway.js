@@ -1,9 +1,18 @@
 require("./src/open-telemetry");
 
 const { ApolloServer } = require("apollo-server");
+const { ApolloGateway, IntrospectAndCompose } = require("@apollo/gateway");
 
-const { resolvers } = require("./src/resolvers");
-const { typeDefs } = require("./src/schema");
+const port = 4000;
+
+const gateway = new ApolloGateway({
+  supergraphSdl: new IntrospectAndCompose({
+    subgraphs: [
+      { name: "books", url: "http://localhost:4001" },
+      { name: "authors", url: "http://localhost:4002" },
+    ],
+  }),
+});
 
 const {
   ApolloServerPluginLandingPageLocalDefault,
@@ -12,8 +21,8 @@ const {
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  gateway,
+  subscriptions: false,
   csrfPrevention: true,
   cache: "bounded",
   /**
@@ -27,6 +36,6 @@ const server = new ApolloServer({
 });
 
 // The `listen` method launches a web server.
-server.listen().then(({ url }) => {
+server.listen({ port }).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });

@@ -1,23 +1,27 @@
 const books = [
   {
+    id: 1,
     title: "The Awakening",
-    author: "Kate Chopin",
   },
   {
+    id: 2,
     title: "City of Glass",
-    author: "Paul Auster",
   },
   {
+    id: 3,
     title: "Da Vinci Code",
-    author: "Dan Brown",
   },
   {
-    title: "Harry potter and the Deathly Hallows",
-    author: "J.K. Rowling",
+    id: 4,
+    title: "Harry Potter and the Deathly Hallows",
   },
   {
+    id: 5,
     title: "Twilight",
-    author: "Stephenie Mayer",
+  },
+  {
+    id: 6,
+    title: "Harry Potter and the Chambers of Secrets",
   },
 ];
 
