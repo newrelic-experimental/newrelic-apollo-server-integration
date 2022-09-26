@@ -1,4 +1,4 @@
-// require("./src/open-telemetry");
+require("./open-telemetry");
 
 const { ApolloServer } = require("apollo-server");
 const { buildSubgraphSchema } = require("@apollo/federation");
@@ -7,10 +7,6 @@ const { resolvers } = require("./resolvers");
 const { typeDefs } = require("./schema");
 
 const port = 4002;
-
-const {
-  ApolloServerPluginLandingPageLocalDefault,
-} = require("apollo-server-core");
 
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.

@@ -11,9 +11,9 @@ const {
   ExpressInstrumentation,
 } = require("@opentelemetry/instrumentation-express");
 // **DELETE IF SETTING UP A GATEWAY, UNCOMMENT OTHERWISE**
-// const {
-//   GraphQLInstrumentation,
-// } = require("@opentelemetry/instrumentation-graphql");
+const {
+  GraphQLInstrumentation,
+} = require("@opentelemetry/instrumentation-graphql");
 
 const {
   OTLPTraceExporter,
@@ -29,7 +29,7 @@ registerInstrumentations({
     new HttpInstrumentation(),
     new ExpressInstrumentation(),
     // **DELETE IF SETTING UP A GATEWAY, UNCOMMENT OTHERWISE**
-    // new GraphQLInstrumentation(),
+    new GraphQLInstrumentation(),
   ],
 });
 
@@ -39,7 +39,7 @@ const provider = new NodeTracerProvider({
   resource: Resource.default().merge(
     new Resource({
       // Replace with any string to identify this service in your system
-      "service.name": "apollo-gateway-otel",
+      "service.name": "apollo-authors-otel",
     })
   ),
 });

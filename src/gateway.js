@@ -1,4 +1,4 @@
-require("./src/open-telemetry");
+require("./open-telemetry");
 
 const { ApolloServer } = require("apollo-server");
 const { ApolloGateway, IntrospectAndCompose } = require("@apollo/gateway");

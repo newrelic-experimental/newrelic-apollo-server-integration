@@ -7,7 +7,7 @@
     "server": "concurrently -k npm:server:*",
     "server:books": "node ./src/books/index.js",
     "server:authors": "node ./src/authors/index.js",
-    "server:graphql": "node ./gateway.js"
+    "server:gateway": "node ./src/gateway.js"
   },
   "keywords": [
     "apollo",
