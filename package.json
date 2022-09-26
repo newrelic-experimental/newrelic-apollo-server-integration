@@ -4,7 +4,7 @@
   "description": "Apollo New Relic OTEL Integration",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js"
+    "server": "node index.js"
   },
   "keywords": [
     "apollo",

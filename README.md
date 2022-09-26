@@ -5,19 +5,15 @@
 ![GitHub stars](https://img.shields.io/github/stars/newrelic-experimental/newrelic-apollo-server-integration?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/newrelic-experimental/newrelic-apollo-server-integration?style=social)
 
-![GitHub all releases](https://img.shields.io/github/downloads/newrelic-experimental/newrelic-apollo-server-integration/total)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/newrelic-experimental/newrelic-apollo-server-integration)
 ![GitHub last commit](https://img.shields.io/github/last-commit/newrelic-experimental/newrelic-apollo-server-integration)
-![GitHub Release Date](https://img.shields.io/github/release-date/newrelic-experimental/newrelic-apollo-server-integration)
-
-
 ![GitHub issues](https://img.shields.io/github/issues/newrelic-experimental/newrelic-apollo-server-integration)
 ![GitHub issues closed](https://img.shields.io/github/issues-closed/newrelic-experimental/newrelic-apollo-server-integration)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/newrelic-experimental/newrelic-apollo-server-integration)
-![GitHub pull requests closed](https://img.shields.io/github/issues-pr-closed/newrelic-experimental/newrelic-apollo-server-integration)
 
 
-This repo contains an example of New Relic with Apollo Server integration using Open Telemetry standard.
+This repo contains an example of New Relic and Apollo Server integration using Open Telemetry standard.
+
+- the [main branch](https://github.com/newrelic-experimental/newrelic-apollo-server-integration/tree/main) contains example of a monolith Apollo server integration
+- the [federated-apollo branch](https://github.com/newrelic-experimental/newrelic-apollo-server-integration/tree/federated-apollo) contains example of Federated Apollo integration
 
 ## Value 
 
@@ -25,16 +21,22 @@ Read the techincal guide in the following blog post:
 
 {{Blog post link - coming soon}}
 
+## Prerequisites
+- [New Relic Account](https://newrelic.com/signup)
+- [New Relic License Key](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/#overview-keys)
+
 ## Installation
 
 Clone this repo.
 
-Run `npm run install` to install all the dependencies.
+Install all dependencies
+- `npm run install`
 
+Add your New Relic [license key](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/#overview-keys) to [./src/open-telemetry.js](./src/open-telemetry.js) file.
 
 ## Getting Started
 
-This Apollo Server sample project contains two query-able types `Book` and `Author`
+This Apollo Server monilith sample project contains two query-able types `Book` and `Author`
 
 ```js
   type Book {
@@ -49,7 +51,7 @@ This Apollo Server sample project contains two query-able types `Book` and `Auth
 
 ### Run
 
-Start the server using `npm run dev` command and navigate your broser to `http://localhost:4000` which will open Apollo Sandbox where you can run the queries such as:
+Start the server using `npm run server` command and navigate your broser to `http://localhost:4000` which will open Apollo Sandbox where you can run the queries such as:
 
 ```js
 query BooksQuery {
@@ -69,15 +71,20 @@ query BookTitlesQuery {
   }
 }
 ```
+## Traces in New Relic UI
 
+Navigate to Traces tab in the New Relic UI and you should see your queries data
+![Screenshot 2022-09-26 at 14 21 47](https://user-images.githubusercontent.com/6328360/192287581-2ee153af-b54b-4579-8e70-a1785f35e6b0.png)
+Where you can see your Apollo trace data
+
+![Screenshot 2022-09-26 at 14 22 42](https://user-images.githubusercontent.com/6328360/192287766-abfe6070-6351-43d1-8715-719841b48d40.png)
+And all the spans and performance data etc.
 ## Usage
 
-This is a sample repo and is inteded to be used as an integration example
-The most important file of the repository showing a sample New Relic Apollo Server Open Telemetry integration can be found in [src/open-telemetry.js](src/open-telemetry.js) file.
+This is a sample repo and is inteded to be used as an integration example.
 
 ## Support
-
-New Relic has open-sourced this project. This project is provided AS-IS WITHOUT WARRANTY OR DEDICATED SUPPORT. Issues and contributions should be reported to the project here on GitHub.
+.New Relic has open-sourced this project. This project is provided AS-IS WITHOUT WARRANTY OR DEDICATED SUPPORT. Issues and contributions should be reported to the project here on GitHub.
 
 >We encourage you to bring your experiences and questions to the [Explorers Hub](https://discuss.newrelic.com) where our community members collaborate on solutions and new ideas.
 
@@ -94,6 +101,4 @@ If you believe you have found a security vulnerability in this project or any of
 
 ## License
 
-[Project Name] is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt) License.
-
->[If applicable: [Project Name] also uses source code from third-party libraries. You can find full details on which libraries are used and the terms under which they are licensed in the third-party notices document.]
+New Relic Apollo Server Integration is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt) License.
