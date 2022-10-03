@@ -19,7 +19,7 @@ This repo contains an example of New Relic and Apollo Server integration using O
 
 Read the techincal guide in the following blog post:
 
-{{Blog post link - coming soon}}
+[Monitoring Apollo Server with OpenTelemetry](https://newrelic.com/blog/how-to-relic/monitoring-apollo-server)
 
 ## Prerequisites
 - [New Relic Account](https://newrelic.com/signup)
