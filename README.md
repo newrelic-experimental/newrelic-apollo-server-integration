@@ -132,6 +132,22 @@ Where you can see your Apollo trace data
 ![Screenshot 2022-09-26 at 12 36 14](https://user-images.githubusercontent.com/6328360/192266745-9c5f4b6c-c797-49d4-90a6-d071fdd9dd83.png)
 And all the spans, performance data and relationships between services etc.
 
+## Random GraphQL Query Executor
+
+This repo also contains a random GraphQL query executor that can be used to generate random queries against the Apollo Gateway GraphQL API. It is located in the root directory folder [periodic-ping.js](./periodic-ping.js).
+
+Once you start the server with:
+-  `npm run server`
+
+you can start the random query executor with:
+- `npm run ping` 
+  - (you might have to install the `node-fetch` package first)
+
+It will start sending random queries to the Gateway between 5-30 seconds.
+You can change the interval in the [periodic-ping.js](./periodic-ping.js) file by adjusting the `minInterval` and `maxInterval` variables.
+
+The executor also causes an error  (by sending an malformed grapqhl query) with 10% probability. You can change the probability by adjusting the `errorProbability` variable.
+
 ## Usage
 
 This is a sample repo and is inteded to be used as an integration example.
@@ -141,7 +157,6 @@ This is a sample repo and is inteded to be used as an integration example.
 New Relic has open-sourced this project. This project is provided AS-IS WITHOUT WARRANTY OR DEDICATED SUPPORT. Issues and contributions should be reported to the project here on GitHub.
 
 >We encourage you to bring your experiences and questions to the [Explorers Hub](https://discuss.newrelic.com) where our community members collaborate on solutions and new ideas.
-
 
 ## Contributing
 
